@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("这是我第一个程序");
     // 设置窗口大小
     this->resize(400,400);
+    this->setWindowIcon(QIcon("D:\\workspace\\qtpro\\QtStudyList\\qtstudy_demo\\asset\\images\\logo1.jpg"));
 
 }
 
