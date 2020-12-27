@@ -35,6 +35,18 @@ MainWindow::MainWindow(QWidget *parent)
     this->resize(400,400);
     this->setWindowIcon(QIcon("D:\\workspace\\qtpro\\QtStudyList\\qtstudy_demo\\asset\\images\\logo1.jpg"));
 
+    // 需求 b2 关闭窗口
+    // connect(b1,发出的信号,this,处理信号的槽函数);
+    connect(&b1,&QPushButton::clicked,this,&MainWindow::close);
+
+    /*
+    * b1: 信号的发出者, 次参数是一个指针，
+    * &QPushButton： 信号发出者，内部的一个信号
+    *    格式: &+信号发出者类的名字 + :: + 信号的名字
+    * this:信号的接受类，此参数是一个指针
+    * &MainWindow：：close: 信号的处理函数， 属于this
+    */
+
 }
 
 MainWindow::~MainWindow()
