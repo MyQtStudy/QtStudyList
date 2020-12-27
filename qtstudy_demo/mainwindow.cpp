@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     btn->setText("我是mybutton");
     btn->move(0,200);
 
-    // 设置窗口标题
+    // 设置窗口标题  test1
     this->setWindowTitle("这是我第一个程序");
     // 设置窗口大小
     this->resize(400,400);
