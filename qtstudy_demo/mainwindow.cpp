@@ -36,6 +36,9 @@ MainWindow::MainWindow(QWidget *parent)
     // windows 设置icon图标方法
     // this->setWindowIcon(QIcon("D:\\workspace\\qtpro\\QtStudyList\\qtstudy_demo\\asset\\images\\logo1.jpg"));
 
+    // 规则: :+添加的前缀+
+    this->setWindowIcon(QIcon(":/qt-logo.png"));
+
     // 需求 b2 关闭窗口
     // connect(b1,发出的信号,this,处理信号的槽函数);
     connect(&b1,&QPushButton::clicked,this,&MainWindow::close);
