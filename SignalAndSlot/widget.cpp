@@ -46,6 +46,27 @@ Widget::Widget(QWidget *parent)
     void (SubWidget::*MySigPlus)(int,QString) = &SubWidget::sigSub;
     connect(&subW,MySigPlus,this,&Widget::slotSubMsg);
 
+    //拓展:
+    /*
+     * 1. 信号可以连接信号
+     * 2. 一个信号可以连接多个槽函数
+     * 3. 多个信号可连接同一个槽函数
+     * 4. 槽函数可以使用lambda表达式
+    */
+
+    //lambda 表达式 加 =可以跑值拷贝  , 加&引用方式,  用this, 使用当前类成员变量, b3按值传递
+    //    [=](int num,QString str){
+    //        b3->setText("aa");
+    //    };
+
+    //使用lambda 表达式作为槽函数
+    connect(b1,&QPushButton::clicked,this,[=](){
+        b2->setText("lambda表达式!");
+        b3->hide();
+    });
+
+
+
 
 }
 
