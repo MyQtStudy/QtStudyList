@@ -10,9 +10,11 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    subwidget.cpp \
     widget.cpp
 
 HEADERS += \
+    subwidget.h \
     widget.h
 
 # Default rules for deployment.

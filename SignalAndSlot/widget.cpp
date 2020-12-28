@@ -32,6 +32,15 @@ Widget::Widget(QWidget *parent)
     */
     connect(b1,&QPushButton::released,this,&Widget::slotForMainWidget);
 
+    // b3 显示子窗口SubWidget -- subW
+    b3 = new QPushButton("软件园",this);
+    b3->resize(150,150);
+    b3->move(300,200);
+
+    connect(b3,&QPushButton::clicked,this,&Widget::slotHideMe);
+    connect(&subW,&SubWidget::sigSub,this,&Widget::slotShowMe);
+
+
 }
 
 Widget::~Widget()
@@ -41,4 +50,19 @@ Widget::~Widget()
 void Widget::slotForMainWidget()
 {
     b2->setText("我被修改了!");
+}
+
+void Widget::slotHideMe(){
+    // 隐藏自己
+    hide();
+    // 显示软件窗口
+    subW.show();
+}
+
+
+void Widget::slotShowMe(){
+    // 显示自己
+    show();
+    // 隐藏软件园窗口
+    subW.hide();
 }
