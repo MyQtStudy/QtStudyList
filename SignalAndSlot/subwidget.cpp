@@ -13,4 +13,5 @@ SubWidget::SubWidget(QWidget *parent) : QWidget(parent)
 void SubWidget::myslot(){
     //发送信号
     emit sigSub();
+    emit sigSub(250,"你是250!!");
 }

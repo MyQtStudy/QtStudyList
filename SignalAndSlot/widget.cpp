@@ -1,5 +1,5 @@
 #include "widget.h"
-
+#include <QDebug>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
@@ -38,7 +38,13 @@ Widget::Widget(QWidget *parent)
     b3->move(300,200);
 
     connect(b3,&QPushButton::clicked,this,&Widget::slotHideMe);
-    connect(&subW,&SubWidget::sigSub,this,&Widget::slotShowMe);
+
+    // Qt 5 信号槽的使用方法
+    void (SubWidget::*MySigSub)() = &SubWidget::sigSub;
+    connect(&subW,MySigSub,this,&Widget::slotShowMe);
+
+    void (SubWidget::*MySigPlus)(int,QString) = &SubWidget::sigSub;
+    connect(&subW,MySigPlus,this,&Widget::slotSubMsg);
 
 
 }
@@ -65,4 +71,12 @@ void Widget::slotShowMe(){
     show();
     // 隐藏软件园窗口
     subW.hide();
+}
+
+void Widget::slotSubMsg(int num, QString str){
+
+    // QString --> char*
+    // string --> char*  .data()
+
+    qDebug() << num << str.toUtf8().data();
 }

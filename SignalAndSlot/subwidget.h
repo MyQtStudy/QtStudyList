@@ -13,6 +13,7 @@ public:
 signals:
     // 自定义信号,必须使用signals声明
     void sigSub();
+    void sigSub(int,QString);
     /*
      * 1. 可以有参数
      * 2. 可以重载

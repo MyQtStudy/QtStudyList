@@ -17,6 +17,7 @@ public:
     void slotForMainWidget();
     void slotHideMe();
     void slotShowMe();
+    void slotSubMsg(int num,QString str);
 
 private:
     QPushButton* b1;
