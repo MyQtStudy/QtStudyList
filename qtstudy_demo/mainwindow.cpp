@@ -33,7 +33,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("这是我第一个程序");
     // 设置窗口大小
     this->resize(400,400);
-    this->setWindowIcon(QIcon("D:\\workspace\\qtpro\\QtStudyList\\qtstudy_demo\\asset\\images\\logo1.jpg"));
+    // windows 设置icon图标方法
+    // this->setWindowIcon(QIcon("D:\\workspace\\qtpro\\QtStudyList\\qtstudy_demo\\asset\\images\\logo1.jpg"));
 
     // 需求 b2 关闭窗口
     // connect(b1,发出的信号,this,处理信号的槽函数);
